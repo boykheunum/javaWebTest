@@ -19,18 +19,19 @@ import java.util.logging.Logger;
  * @author Admin
  */
 public class controlTypeBook {
-    public static int listTypeBook(Vector<typeModel>ds){
+
+    public static int listTypeBook(Vector<typeModel> ds) {
         Connection cnn = CSDL.dataBaseConnection();
-        if(cnn == null){
+        if (cnn == null) {
             return -1;
-        }else{
+        }else {
             try {
                 PreparedStatement pst = cnn.prepareStatement("SELECT * FROM loaisach");
                 ResultSet rs = pst.executeQuery();
-                while(rs.next()){
+                while (rs.next()) {
                     typeModel tb = new typeModel();
-                    rs.getString(tb.getMaLoaiS());
-                    rs.getString(tb.getTenLoaiS());
+                    tb.setMaLoaiS(rs.getString("MaLoaiS"));
+                    tb.setTenLoaiS(rs.getString("TenLoaiS"));
                     ds.add(tb);
                 }
                 return 1;
@@ -38,14 +39,15 @@ public class controlTypeBook {
                 Logger.getLogger(controlTypeBook.class.getName()).log(Level.SEVERE, null, ex);
                 return -2;
             }
-            
+
         }
     }
-    public static int addTypeBook(typeModel tb){
+
+    public static int addTypeBook(typeModel tb) {
         Connection cnn = CSDL.dataBaseConnection();
-        if(cnn == null){
+        if (cnn == null) {
             return -1;
-        }else{
+        } else {
             try {
                 PreparedStatement pst = cnn.prepareStatement("INSERT INTO loaisach(MaLoaiS,TenLoaiS) VALUES(?,?)");
                 pst.setString(1, tb.getMaLoaiS());
@@ -57,13 +59,14 @@ public class controlTypeBook {
                 return -2;
             }
         }
-        
+
     }
-    public static int deleteType(String MS){
+
+    public static int deleteType(String MS) {
         Connection cnn = CSDL.dataBaseConnection();
-        if(cnn == null){
+        if (cnn == null) {
             return -1;
-        }else{
+        } else {
             try {
                 PreparedStatement pst = cnn.prepareStatement("DELETE * FROM loaisach WHERE MaLoaiS = ?");
                 pst.setString(1, MS);

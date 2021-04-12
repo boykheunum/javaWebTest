@@ -85,7 +85,6 @@ public final class listTypeBook_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                <td>");
       out.print(tb.getTenLoaiS());
       out.write("</td>\n");
-      out.write("\n");
       out.write("            </tr>\n");
       out.write("            ");
 }

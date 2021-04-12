@@ -35,7 +35,6 @@
             <tr>
                 <td><%=tb.getMaLoaiS()%></td>
                 <td><%=tb.getTenLoaiS()%></td>
-
             </tr>
             <%}%>
         </table>
