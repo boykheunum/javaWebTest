@@ -3,17 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/TienDat/github/javaWebTest/web/addBook.jsp</file>
-            <file>file:/D:/TienDat/github/javaWebTest/web/addType.jsp</file>
-            <file>file:/D:/TienDat/github/javaWebTest/src/java/Data/login.java</file>
-            <file>file:/D:/TienDat/github/javaWebTest/web/login.jsp</file>
-            <file>file:/D:/TienDat/github/javaWebTest/src/java/conTrol/controlBook.java</file>
-            <file>file:/D:/TienDat/github/javaWebTest/src/java/Data/MK.java</file>
-            <file>file:/D:/TienDat/github/javaWebTest/web/listBook.jsp</file>
-            <file>file:/D:/TienDat/github/javaWebTest/src/java/Data/addBook.java</file>
-            <file>file:/D:/TienDat/github/javaWebTest/web/listTypeBook.jsp</file>
-            <file>file:/D:/TienDat/github/javaWebTest/src/java/Data/addType.java</file>
-            <file>file:/D:/TienDat/github/javaWebTest/web/doiMK.jsp</file>
+            <file>file:/D:/hoctap/JAVA/project/javaWebTest/src/java/Data/addBook.java</file>
+            <file>file:/D:/hoctap/JAVA/project/javaWebTest/web/addBook.jsp</file>
+            <file>file:/D:/hoctap/JAVA/project/javaWebTest/web/listBook.jsp</file>
+            <file>file:/D:/hoctap/JAVA/project/javaWebTest/src/java/conTrol/controlBook.java</file>
         </group>
     </open-files>
 </project-private>
