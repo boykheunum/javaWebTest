@@ -3,9 +3,12 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import Model.userModel;
+import conTrol.controlTypeBook;
+import Model.typeModel;
+import java.util.Vector;
+import Model.bookModel;
 
-public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class addBook_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -42,29 +45,46 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>login</title>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>JSP Page</title>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
       out.write("        ");
 
-            userModel u = new userModel();
+            Vector<typeModel> ds = new Vector<typeModel>();
+            int kq = controlTypeBook.listTypeBook(ds);
+
         
-      out.write("\r\n");
-      out.write("        <form id=\"f1\" name=\"f1\" method=\"post\" action=\"login\">\r\n");
-      out.write("            <p>Tai Khoan:</p><input type=\"text\" name=\"TaiKhoan\" id=\"TaiKhoan\">\r\n");
-      out.write("            <p>Mat Khau:</p><input type=\"password\" name=\"MatKhau\" id=\"MatKhau\">\r\n");
-      out.write("            <button id=\"b1\" name=\"b1\" type=\"submit\">Dang nhap</button>\r\n");
-      out.write("        </form>\r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
+      out.write("\n");
+      out.write("        <form name=\"f1\" id=\"f1\" method=\"post\" action=\"addBook\">\n");
+      out.write("            <p>Ma sach</p><input name=\"MaS\" id=\"MaS\" type=\"text\">\n");
+      out.write("            <p>Ten sach</p><input name=\"TenSach\" id=\"TenSach\" type=\"text\" >\n");
+      out.write("            <p>Mo ta Ngan</p><textarea name=\"MoTaNgan\" id=\"MoTaNgan\"></textarea>\n");
+      out.write("            <p>Mo ta Chi tiet</p><input name=\"MoTaChiTiet\" id=\"MoTaChiTiet\" type=\"textrea\">\n");
+      out.write("\n");
+      out.write("            <p>Ma loai sach</p><select>");
+for (typeModel tp : ds) {
+      out.write("<option>");
+      out.print(tp.getMaLoaiS());
+      out.write("</option>");
+}
+      out.write("</select>\n");
+      out.write("\n");
+      out.write("            <input type=\"submit\" name=\"b1\" id=\"b1\" value=\"them\">\n");
+      out.write("        </form>\n");
+      out.write("\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

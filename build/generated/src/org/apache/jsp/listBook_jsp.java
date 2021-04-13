@@ -43,18 +43,18 @@ public final class listBook_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
       out.write("        ");
 
             Vector<bookModel> ds = new Vector<bookModel>();
@@ -65,46 +65,46 @@ public final class listBook_jsp extends org.apache.jasper.runtime.HttpJspBase
                 out.print("<script>alert('loi cau lenh sql')</script>");
             } else {
         
-      out.write("\n");
-      out.write("        <table border=\"1\">\n");
-      out.write("            <tr background-color=\"aqua\">\n");
-      out.write("                <td>Ma Sach</td>\n");
-      out.write("                <td>Ten Sach</td>\n");
-      out.write("                <td>Mo ta ngan</td>\n");
-      out.write("                <td>Mo ta chi tiet</td>\n");
-      out.write("                <td>MaLoaiS</td>\n");
-      out.write("            </tr>\n");
+      out.write("\r\n");
+      out.write("        <table border=\"1\">\r\n");
+      out.write("            <tr background-color=\"aqua\">\r\n");
+      out.write("                <td>Ma Sach</td>\r\n");
+      out.write("                <td>Ten Sach</td>\r\n");
+      out.write("                <td>Mo ta ngan</td>\r\n");
+      out.write("                <td>Mo ta chi tiet</td>\r\n");
+      out.write("                <td>MaLoaiS</td>\r\n");
+      out.write("            </tr>\r\n");
       out.write("            ");
 
                 for (bookModel bk : ds) {
             
-      out.write("\n");
-      out.write("            <tr>\n");
+      out.write("\r\n");
+      out.write("            <tr>\r\n");
       out.write("                <td>");
       out.print(bk.getMaS());
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print(bk.getTenSach());
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print(bk.getMoTaNgan());
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print(bk.getMoTaChiTiet());
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print(bk.getMaLoaiS());
-      out.write("</td>\n");
-      out.write("            </tr>\n");
+      out.write("</td>\r\n");
+      out.write("            </tr>\r\n");
       out.write("            ");
 }
-      out.write("\n");
-      out.write("        </table>\n");
+      out.write("\r\n");
+      out.write("        </table>\r\n");
       out.write("        ");
 }
-      out.write("\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

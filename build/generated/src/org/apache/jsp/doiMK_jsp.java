@@ -41,16 +41,16 @@ public final class doiMK_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
       out.write("        ");
  
             HttpSession sesstion = request.getSession();
@@ -59,20 +59,20 @@ public final class doiMK_jsp extends org.apache.jasper.runtime.HttpJspBase
             int kq = conTrol.controlUser.searchTK(TK);
             if(kq != 0){
         
-      out.write("\n");
-      out.write("        <form action=\"MK\" method=\"post\" name=\"f2\" id=\"f2\">\n");
-      out.write("            <input type=\"hidden\" name=\"Taikhoan\" value=\"");
+      out.write("\r\n");
+      out.write("        <form action=\"MK\" method=\"post\" name=\"f2\" id=\"f2\">\r\n");
+      out.write("            <input type=\"text\" name=\"TaiKhoan\" id=\"TaiKhoan\" value=\"");
       out.print(TK);
-      out.write("\">\n");
-      out.write("            <p>Mat Khau Moi</p><input type=\"password\" name=\"MatKhau\" id=\"MatKhau\">\n");
-      out.write("            <p>Xac Nhan lai Mat Khau</p><input type=\"password\" name=\"MatKhau1\" id=\"MatKhau1\">\n");
-      out.write("            <button id=\"b1\" name=\"b1\" type=\"submit\">Doi MK</button>\n");
-      out.write("        </form>\n");
+      out.write("\">\r\n");
+      out.write("            <p>Mat Khau Moi</p><input type=\"password\" name=\"MatKhau\" id=\"MatKhau\">\r\n");
+      out.write("            <p>Xac Nhan lai Mat Khau</p><input type=\"password\" name=\"MatKhau1\" id=\"MatKhau1\">\r\n");
+      out.write("            <button id=\"b1\" name=\"b1\" type=\"submit\">Doi MK</button>\r\n");
+      out.write("        </form>\r\n");
       out.write("        ");
 }
-      out.write("\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

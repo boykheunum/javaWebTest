@@ -5,7 +5,7 @@
  */
 package Data;
 
-import Model.typeModel;
+import Model.bookModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Admin
+ * @author DELL
  */
-@WebServlet(name = "addType", urlPatterns = {"/addType"})
-public class addType extends HttpServlet {
+@WebServlet(name = "addBook", urlPatterns = {"/addBook"})
+public class addBook extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,16 +34,18 @@ public class addType extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            /* TODO output your page here. You may use following sample code. */ 
+            String MaS = request.getParameter("MaS");
+            String TenSach = request.getParameter("TenSach");
+            String MoTaNgan = request.getParameter("MoTaNgan");
+            String MoTaChiTiet = request.getParameter("MoTaChiTiet");
             String MaLoaiS = request.getParameter("MaLoaiS");
-            String TenLoaiS = request.getParameter("tenLoaiS");
-            typeModel tm = new typeModel(MaLoaiS, TenLoaiS);
-            int kq = conTrol.controlTypeBook.addTypeBook(tm);
-            if(kq==-2){
+            bookModel bk = new bookModel(MaS, TenSach, MoTaNgan, MoTaChiTiet, MaLoaiS);
+            int kq = conTrol.controlBook.addBook(bk);
+            if (kq == -2) {
                 out.print("<script>alert('them that bai')</script>");
-            }else if(kq==1){
+            } else if (kq == 1) {
                 out.print("<script>alert('them thanh cong')</script>");
-                response.sendRedirect("listTypeBook.jsp");
             }
         }
     }
