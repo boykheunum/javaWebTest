@@ -14,12 +14,6 @@ public class userModel {
     public userModel() {
     }
 
-    public userModel(String TaiKhoan, String MatKhau, int id) {
-        this.TaiKhoan = TaiKhoan;
-        this.MatKhau = MatKhau;
-        this.id = id;
-    }
-
     public String getTaiKhoan() {
         return TaiKhoan;
     }
@@ -43,7 +37,23 @@ public class userModel {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
     private String TaiKhoan;
     private String MatKhau;
     private int id;
+    private String image;
+
+    public userModel(String TaiKhoan, String MatKhau, int id, String image) {
+        this.TaiKhoan = TaiKhoan;
+        this.MatKhau = MatKhau;
+        this.id = id;
+        this.image = image;
+    }
 }

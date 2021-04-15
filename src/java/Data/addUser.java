@@ -13,16 +13,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import sun.security.pkcs11.wrapper.Functions;
-import sun.swing.SwingUtilities2;
 
 /**
  *
- * @author Admin
+ * @author DELL
  */
-@WebServlet(name = "login", urlPatterns = {"/login"})
-public class login extends HttpServlet {
+@WebServlet(name = "addUser", urlPatterns = {"/addUser"})
+public class addUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,21 +37,18 @@ public class login extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String TaiKhoan = request.getParameter("TaiKhoan");
             String MatKhau = request.getParameter("MatKhau");
-            String image = "";
-            userModel u = new userModel(TaiKhoan, MatKhau, 0, image);
-            int kq = conTrol.controlUser.login(u);
-            if (kq == -1) {
-                out.print("<script>alert('loi ket noi database')</script>");
-            } else if (kq != 0) {
-                out.print("<script>alert('Dang nhap thanh cong')</script>");
-                HttpSession session = request.getSession();
-                session.setAttribute("tk", TaiKhoan);
-                session.setAttribute("MK", MatKhau);
+            String image = request.getParameter("image");
+            userModel us = new userModel(TaiKhoan, MatKhau, 0, image);
+            int kq = conTrol.controlUser.addUser(us);
+            if(kq==-11){
+                out.print("<script>alert('loi database')</script>");
+            }else if(kq==0){
+                out.print("<script>alert('ko co ban ghi')</script>");
+            }else if(kq==-2){
+                out.print("<script>alert('loi sql')</script>");
+            }else{
+                out.print("<script>alert('them thanh cong')</script>");
                 response.sendRedirect("user.jsp");
-            } else if (kq == -2) {
-                out.print("<script>alert('loi cau lenh sql')</script>");
-            } else if (kq == 0) {
-                out.print("<script>alert('tai khoan hoac mat khau sai')</script>");
             }
         }
     }

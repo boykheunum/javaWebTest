@@ -27,7 +27,7 @@
             <p>Mo ta Ngan</p><textarea name="MoTaNgan" id="MoTaNgan"></textarea>
             <p>Mo ta Chi tiet</p><input name="MoTaChiTiet" id="MoTaChiTiet" type="textrea">
 
-            <p>Ma loai sach</p><select><%for (typeModel tp : ds) {%><option><%=tp.getMaLoaiS()%></option><%}%></select>
+            <p>Ma loai sach</p><select id="MaLoaiS" name="MaLoaiS"><%for (typeModel tp : ds) {%><option ><%=tp.getMaLoaiS()%></option><%}%></select>
 
             <input type="submit" name="b1" id="b1" value="them">
         </form>
