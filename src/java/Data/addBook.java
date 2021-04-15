@@ -46,6 +46,7 @@ public class addBook extends HttpServlet {
                 out.print("<script>alert('them that bai')</script>");
             } else if (kq == 1) {
                 out.print("<script>alert('them thanh cong')</script>");
+                response.sendRedirect("listBook.jsp");
             }
         }
     }
