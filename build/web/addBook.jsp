@@ -19,15 +19,13 @@
         <%
             Vector<typeModel> ds = new Vector<typeModel>();
             int kq = controlTypeBook.listTypeBook(ds);
-
         %>
         <form name="f1" id="f1" method="post" action="addBook">
             <p>Ma sach</p><input name="MaS" id="MaS" type="text">
             <p>Ten sach</p><input name="TenSach" id="TenSach" type="text" >
             <p>Mo ta Ngan</p><textarea name="MoTaNgan" id="MoTaNgan"></textarea>
             <p>Mo ta Chi tiet</p><input name="MoTaChiTiet" id="MoTaChiTiet" type="textrea">
-            <p>Ma loai sach</p><select name="MaLoaiS" id="MaLoaiS"><%for(typeModel tp : ds) {%><option ><%=tp.getMaLoaiS()%></option><%}%></select>
-
+            <p>Ma loai sach</p><select id="MaLoaiS" name="MaLoaiS"><%for (typeModel tp : ds) {%><option ><%=tp.getMaLoaiS()%></option><%}%></select>
             <input type="submit" name="b1" id="b1" value="them">
         </form>
 

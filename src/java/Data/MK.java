@@ -38,7 +38,8 @@ public class MK extends HttpServlet {
             String TaiKhoan = request.getParameter("TaiKhoan");
             String MatKhau = request.getParameter("MatKhau");
             String MatKhau1 = request.getParameter("MatKhau1");
-            userModel us = new userModel(TaiKhoan, MatKhau, 0);
+            String image = "";
+            userModel us = new userModel(TaiKhoan, MatKhau, 0, image);
             int kq = conTrol.controlUser.DoiMK(us);
             boolean check = MatKhau.equals(MatKhau1);
             if(check==false){

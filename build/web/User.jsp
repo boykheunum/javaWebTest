@@ -25,16 +25,18 @@
         %>
         <table border="1">
             <tr>
+                <td>Image</td>
                 <td>id</td>
                 <td>Tai khoan</td>
                 <td>Mat khau</td>
             </tr>
             <%for (userModel u : ds) {%>
             <tr>
+                <td><img src="<%=u.getImage()%>"></td>
                 <td><%=u.getId()%></td>
                 <td><%=u.getTaiKhoan()%></td>
                 <td><%=u.getMatKhau()%></td>
-                <td><a href=""></a></td>
+
             </tr>
             <%}%>
         </table>

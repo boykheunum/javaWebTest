@@ -33,6 +33,7 @@ public class controlUser {
                     u.setTaiKhoan(rs.getString("TaiKhoan"));
                     u.setMatKhau(rs.getString("MatKhau"));
                     u.setId(rs.getInt("id"));
+                    u.setImage(rs.getString("image"));
                     ds.add(u);
                 }
                 return 1;
@@ -98,6 +99,25 @@ public class controlUser {
                 Logger.getLogger(controlUser.class.getName()).log(Level.SEVERE, null, ex);
                 return -2;
             }
+        }
+    }
+    public static int addUser(userModel us){
+        Connection cnn = CSDL.dataBaseConnection();
+        if(cnn == null){
+         return -1;
+        }else{
+            PreparedStatement ps;
+            try {
+                ps = cnn.prepareStatement("INSERT INTO user(TaiKhoan,MatKhau,image) VALUES(?, ?, ?)");
+                ps.setString(1, us.getTaiKhoan());
+                ps.setString(2, us.getTaiKhoan());
+                ps.setString(3, us.getImage());
+                return ps.executeUpdate();
+            } catch (SQLException ex) {
+                Logger.getLogger(controlUser.class.getName()).log(Level.SEVERE, null, ex);
+                return -2;
+            }
+            
         }
     }
 }

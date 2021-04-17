@@ -3,10 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/hoctap/JAVA/project/javaWebTest/src/java/Data/addBook.java</file>
-            <file>file:/D:/hoctap/JAVA/project/javaWebTest/web/addBook.jsp</file>
-            <file>file:/D:/hoctap/JAVA/project/javaWebTest/web/listBook.jsp</file>
-            <file>file:/D:/hoctap/JAVA/project/javaWebTest/src/java/conTrol/controlBook.java</file>
+            <file>file:/D:/hoctap/JAVA/project/javaWebTest/web/addUser.jsp</file>
+            <file>file:/D:/hoctap/JAVA/project/javaWebTest/src/java/Data/addUser.java</file>
         </group>
     </open-files>
 </project-private>

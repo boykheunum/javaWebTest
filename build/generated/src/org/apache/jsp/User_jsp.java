@@ -43,18 +43,18 @@ public final class User_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>ThemUser</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>ThemUser</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
       out.write("        ");
 
             Vector<userModel> ds = new Vector<userModel>();
@@ -65,36 +65,41 @@ public final class User_jsp extends org.apache.jasper.runtime.HttpJspBase
                 out.print("<script>alert('hien thi that bai')</script>");
             } else {
         
-      out.write("\n");
-      out.write("        <table border=\"1\">\n");
-      out.write("            <tr>\n");
-      out.write("                <td>id</td>\n");
-      out.write("                <td>Tai khoan</td>\n");
-      out.write("                <td>Mat khau</td>\n");
-      out.write("            </tr>\n");
+      out.write("\r\n");
+      out.write("        <table border=\"1\">\r\n");
+      out.write("            <tr>\r\n");
+      out.write("                <td>Image</td>\r\n");
+      out.write("                <td>id</td>\r\n");
+      out.write("                <td>Tai khoan</td>\r\n");
+      out.write("                <td>Mat khau</td>\r\n");
+      out.write("            </tr>\r\n");
       out.write("            ");
 for (userModel u : ds) {
-      out.write("\n");
-      out.write("            <tr>\n");
+      out.write("\r\n");
+      out.write("            <tr>\r\n");
+      out.write("                <td><img src=\"");
+      out.print(u.getImage());
+      out.write("\"></td>\r\n");
       out.write("                <td>");
       out.print(u.getId());
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print(u.getTaiKhoan());
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("                <td>");
       out.print(u.getMatKhau());
-      out.write("</td>\n");
-      out.write("            </tr>\n");
+      out.write("</td>\r\n");
+      out.write("\r\n");
+      out.write("            </tr>\r\n");
       out.write("            ");
 }
-      out.write("\n");
-      out.write("        </table>\n");
+      out.write("\r\n");
+      out.write("        </table>\r\n");
       out.write("        ");
 }
-      out.write("\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

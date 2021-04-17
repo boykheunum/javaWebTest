@@ -3,12 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import conTrol.controlTypeBook;
-import Model.typeModel;
-import java.util.Vector;
-import Model.bookModel;
 
-public final class addBook_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class addUser_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,10 +44,6 @@ public final class addBook_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
@@ -59,27 +51,12 @@ public final class addBook_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>JSP Page</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
-      out.write("        ");
-
-            Vector<typeModel> ds = new Vector<typeModel>();
-            int kq = controlTypeBook.listTypeBook(ds);
-        
-      out.write("\r\n");
-      out.write("        <form name=\"f1\" id=\"f1\" method=\"post\" action=\"addBook\">\r\n");
-      out.write("            <p>Ma sach</p><input name=\"MaS\" id=\"MaS\" type=\"text\">\r\n");
-      out.write("            <p>Ten sach</p><input name=\"TenSach\" id=\"TenSach\" type=\"text\" >\r\n");
-      out.write("            <p>Mo ta Ngan</p><textarea name=\"MoTaNgan\" id=\"MoTaNgan\"></textarea>\r\n");
-      out.write("            <p>Mo ta Chi tiet</p><input name=\"MoTaChiTiet\" id=\"MoTaChiTiet\" type=\"textrea\">\r\n");
-      out.write("            <p>Ma loai sach</p><select id=\"MaLoaiS\" name=\"MaLoaiS\">");
-for (typeModel tp : ds) {
-      out.write("<option >");
-      out.print(tp.getMaLoaiS());
-      out.write("</option>");
-}
-      out.write("</select>\r\n");
-      out.write("            <input type=\"submit\" name=\"b1\" id=\"b1\" value=\"them\">\r\n");
+      out.write("        <form action=\"addUser\" method=\"post\" enctype=\"multipart/from-data\">\r\n");
+      out.write("            <p>Tai khoan</p><input name=\"TaiKhoan\" id=\"TaiKhoan\" type=\"text\">\r\n");
+      out.write("            <p>Mat khau</p><input name=\"MatKhau\" id=\"Matkhau\" type=\"text\">\r\n");
+      out.write("            <p>avatar</p><input name=\"image\" id=\"image\" type=\"file\">\r\n");
+      out.write("            <input type=\"submit\" id=\"b1\" name=\"b1\">\r\n");
       out.write("        </form>\r\n");
-      out.write("\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
