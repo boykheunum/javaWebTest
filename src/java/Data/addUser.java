@@ -6,7 +6,6 @@
 package Data;
 
 import Model.userModel;
-import conTrol.controlUser;
 import conTrol.uploadFile;
 import java.io.File;
 import java.io.IOException;
@@ -20,16 +19,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.coyote.ajp.Constants;
-import org.apache.tomcat.util.http.fileupload.FileUploadException;
-import org.apache.tomcat.util.http.fileupload.RequestContext;
-import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
-import org.eclipse.jdt.internal.compiler.apt.model.Factory;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
- * @author DELL
+ * @author Nguyen Tien Dat
  */
 @WebServlet(name = "addUser", urlPatterns = {"/addUser"})
 public class addUser extends HttpServlet {
@@ -48,37 +44,34 @@ public class addUser extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            int maxSizeFile = 5000 * 1024;
-            int maxSizeMem = 5000 * 1024;
-            ServletContext sc = request.getServletContext();
-            String curPath = sc.getRealPath("/");
+            request.setCharacterEncoding("UTF-8");
+            int sizeFileMax = 1024 * 5000;
+            int sizeMemMax = 1024 * 5000;
+            ServletContext context = request.getServletContext();
+            String curPath = context.getRealPath("/");
             String filePath = curPath + "Uploads\\";
-            boolean mutilPath = ServletFileUpload.isMultipartContent(request);
-            if(mutilPath == false){
+            boolean isMultiFile = ServletFileUpload.isMultipartContent(request);
+            if (isMultiFile) {
                 DiskFileItemFactory factory = new DiskFileItemFactory();
-                factory.setSizeThreshold(maxSizeMem);
+                factory.setSizeThreshold(sizeMemMax);
                 factory.setRepository(new File(curPath));
-                ServletFileUpload sfu = new ServletFileUpload(factory);
-                sfu.setSizeMax(maxSizeMem);
+                ServletFileUpload upload = new ServletFileUpload(factory);
+                upload.setSizeMax(sizeFileMax);
                 try {
-                    List FileItem = sfu.parseRequest((RequestContext) request);
-                    String Taikhoan = conTrol.uploadFile.uploadFile(FileItem, "TaiKhoan", "");
-                    String MatKhau = conTrol.uploadFile.uploadFile(FileItem, "MatKhau", "");
-                    String image = conTrol.uploadFile.uploadFile(FileItem, "image", filePath);
-                    userModel us = new userModel(Taikhoan, MatKhau, image);
-                    int kq = new controlUser().addUser(us);
-                    if(kq == -1){
-                        out.print("<script>alert('ket noi database that bai')</script>");
-                    }else if(kq == 0){
-                        out.print("<script>alert('ko co ban ghi')</script>");
-                    }else{
-                        out.print("<script>alert('them thanh cong')</script>");
+                    List Item = upload.parseRequest(request);
+                    String TaiKhoan = conTrol.uploadFile.uploadFile(Item, "TaiKhoan", "");
+                    String MatKhau = conTrol.uploadFile.uploadFile(Item, "MatKhau", "");
+                    String Image = conTrol.uploadFile.uploadFile(Item, "image", "");
+                    userModel us = new userModel(TaiKhoan, MatKhau, Image);
+                    int kq = new conTrol.controlUser().addUser(us);
+                    if(kq > 0){
                         response.sendRedirect("User.jsp");
                     }
                 } catch (FileUploadException ex) {
                     Logger.getLogger(addUser.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (Exception ex) {
+                    Logger.getLogger(addUser.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
             }
         }
     }

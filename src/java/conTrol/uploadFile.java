@@ -9,39 +9,33 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.apache.tomcat.util.http.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItem;
 
 /**
  *
  * @author Nguyen Tien Dat
  */
 public class uploadFile {
-    public static String uploadFile(List fileItemList, String inputName, String filePathString) throws UnsupportedEncodingException{
+
+    public static String uploadFile(List fileItemList, String inputName, String filePathString) throws UnsupportedEncodingException, Exception {
         Iterator i = fileItemList.iterator();
-        while (i.hasNext()) {            
+        while (i.hasNext()) {
             FileItem fi = (FileItem) i.next();
             String fieldName = fi.getFieldName();
-            if(fieldName.equalsIgnoreCase(inputName)){
-                if(fi.isFormField()){
+            if (fieldName.equalsIgnoreCase(inputName)) {
+                if (fi.isFormField()) {
                     return fi.getString("UTF-8");
-                }else{
+                } else {
                     String fileName = fi.getName();
-                    if(fileName.equals("")==false){
-                        File file = new File(filePathString+fileName);
-                        try {
-                            fi.write(file);
-                        } catch (Exception ex) {
-                            Logger.getLogger(uploadFile.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                      
+                    if (fileName.equals("") == false) {
+                        File file = new File(filePathString + fileName);
+                        fi.write(file);
                     }
                     return fileName;
                 }
-                
             }
         }
         return "";
     }
+
 }
